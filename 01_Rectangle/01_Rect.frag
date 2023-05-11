@@ -2,6 +2,12 @@ precision highp float;
 
 uniform vec2 u_resolution;
 
+/*
+// 正方形
+max(abs(x - offsetX), abs(y - offsetY)) - length = 0;
+
+*/
+
 // fill rectangle
 float rect(vec2 startPos, vec2 size, vec2 uv) {
   
