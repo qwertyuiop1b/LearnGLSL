@@ -28,7 +28,9 @@ void main() {
   vec3 circleColor = vec3(0.3, 0.2, 0.8);
 
   float circle = sdfCircle(uv, 0.2, vec2(0));
-
-  color = mix(circleColor, color, step(0.0, circle));
+  // step(0., circle)
+  circle = smoothstep(0., 0.008, circle);
+  color = mix(circleColor, color, circle);
+  // color = mix(circleColor, color, step(0., circle));
   outColor = vec4(color, 1.0);
 }
