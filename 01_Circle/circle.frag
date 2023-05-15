@@ -7,7 +7,7 @@ uniform vec2 u_resolution;
 // x^2 + y^2 = r^2
 // offset ===>  (x - offsetX)^2 + (y - offsetY)^2 = r^2
 
-// 默认是（0,0),小于0在圆内，大于0在圆外  
+// 默认是（0,0),小于0在圆内，大于0在圆外  (sdf符号距离函数)
 float sdfCircle(vec2 uv, float radius, vec2 offset) {
   return length(uv - offset) - radius;
 }
