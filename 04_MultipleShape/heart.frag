@@ -12,13 +12,18 @@ float sdHeart(vec2 uv, float size, vec2 offset) {
   float x = uv.x - offset.x;
   float y = uv.y - offset.y;
 
-  float xx = x * x;
-  float yy = y * y;
-  float yyy = yy * y;
-  float group = xx + yy - size;
-  float d = group * group * group - xx * yyy;
+  // float xx = x * x;
+  // float yy = y * y;
+  // float yyy = yy * y;
+  // float group = xx + yy - size;
+  // float d = group * group * group - xx * yyy;
+
+  // dot
+  float group = dot(x, x) + dot(y, y) - size;
+  float d = group * dot(group, group) - dot(x, x) * dot(y, y) * y;
+
   
-  // opengl 显示异常
+  // 可能会遇到异常情况
   // https://inspirnathan.com/posts/51-shadertoy-tutorial-part-5/
   // float group = pow(x, 2.) + pow(y, 2.) - size;
   // float d = pow(group, 3.) - pow(x, 2.) * pow(y, 3.);
