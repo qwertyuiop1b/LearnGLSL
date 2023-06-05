@@ -6,7 +6,7 @@ uniform vec2 u_resolution;
 //---------------------------------------------------------
 // draw rectangle at pos(-1..+1) with given size
 //---------------------------------------------------------
-float rectangle(vec2 pos, vec2 size)
+float rectangle(vec2 uv, vec2 pos, vec2 size)
 {
   size *= 0.5;
   vec2 r = abs(uv - pos - size) - size;
