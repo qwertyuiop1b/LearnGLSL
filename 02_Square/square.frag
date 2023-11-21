@@ -7,15 +7,17 @@ uniform vec2 u_resolution;
 
 out vec4 outColor;
 
+
 float angle2Rad(float angle) {
   return angle / 180. * pi;
 }
 
-// todo 2D旋转矩阵
+
 mat2 rotate(float angle) {
   float rad = angle2Rad(angle);
   return mat2(cos(rad), sin(rad), -sin(rad), cos(rad));
 }
+
 
 // max(abs(x),abs(y)) = r
 float sdfSquare(vec2 uv, float size, vec2 offset) {
@@ -36,10 +38,8 @@ void main() {
 
   vec3 col = vec3(0.);
 
-
   float square = step(sdfSquare(uv, 0.2, vec2(0.)), 0.);
   col = mix(col, vec3(0.3, 0.5, 0.2), square);
-
 
   outColor = vec4(col, 1.0);
 }
