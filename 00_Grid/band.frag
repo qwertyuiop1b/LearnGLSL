@@ -12,7 +12,7 @@ void main() {
   vec2 uv = gl_FragCoord.xy / u_resolution;
   float num = 3.0;
   uv *= num;
-  vec3 col = vec3(0.);
+  vec3 col = vec3(0.4902, 0.1255, 0.1255);
 
   vec3 leftColor = vec3(0.2, 0.3, 0);
   vec3 rightColor = vec3(0.3, 0.5, 1.0);
